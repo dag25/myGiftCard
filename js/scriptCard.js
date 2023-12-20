@@ -7,9 +7,10 @@ const cardFrom = document.querySelector('.card__from');
 const cardTo = document.querySelector('.card__to');
 const cardMessage = document.querySelector('.card__message');
 
-const rearrangeElement = () => {
-	const screenWidth = window.innerWidth;
-	if (screenWidth <= 580) {
+const mediaQuery = window.matchMedia('(max-width: 580px)');
+
+const rearrangeElement = e => {
+	if (e.matches) {
 		card.after(cardContacts);
 	} else {
 		cardTitle.after(cardContacts);
@@ -33,8 +34,8 @@ const getGiftData = async id => {
 	}
 };
 const init = async () => {
-	rearrangeElement();
-	window.addEventListener('resize', rearrangeElement);
+	rearrangeElement(mediaQuery);
+	mediaQuery.addEventListener('change', rearrangeElement);
 
 	const id = getIdFromUrl();
 

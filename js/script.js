@@ -1,4 +1,5 @@
 const API_URL = 'https://savory-cord-fukuiraptor.glitch.me/';
+
 const swiperThumb = new Swiper('.gift__swiper--thumb', {
 	slidesPerView: 'auto',
 	spaceBetween: 12,
@@ -13,12 +14,14 @@ const swiperThumb = new Swiper('.gift__swiper--thumb', {
 		},
 	},
 });
+
 const swiperMain = new Swiper('.gift__swiper--card', {
 	spaceBetween: 16,
 	thumbs: {
 		swiper: swiperThumb,
 	},
 });
+
 const form = document.querySelector('.form');
 const submitButton = form.querySelector('.form__button');
 const cardInput = form.querySelector('.form__card');
